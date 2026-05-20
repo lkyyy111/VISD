@@ -70,26 +70,55 @@ h1 {
 
 .accent {
   display: inline-block;
-  background: linear-gradient(90deg, #ff5f6d 0%, #ffc83d 20%, #9be33f 40%, #45c4ff 60%, #8a62ff 80%, #ff6ec7 100%);
-  background-size: 100% 100%;
+  background: linear-gradient(
+    100deg,
+    #ff6b7a 0%,
+    #ff8f5a 14%,
+    #ffd85b 28%,
+    #7fdc6c 42%,
+    #49c6d9 56%,
+    #5d86ff 72%,
+    #b36cff 86%,
+    #ff78c8 100%
+  );
+  background-size: 320% 100%;
+  background-position: 0% 50%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: visd-hue-cycle 7s linear infinite;
+  animation: visd-soft-spectrum 18s ease-in-out infinite alternate;
 }
 
-@keyframes visd-hue-cycle {
+@keyframes visd-soft-spectrum {
   0% {
-    filter: hue-rotate(0deg) saturate(1.02) brightness(1);
+    background-position: 0% 50%;
+    filter: saturate(1.01) brightness(1);
   }
 
-  50% {
-    filter: hue-rotate(120deg) saturate(1.08) brightness(1.03);
+  18% {
+    background-position: 14% 50%;
+    filter: saturate(1.03) brightness(1.01);
+  }
+
+  36% {
+    background-position: 30% 50%;
+    filter: saturate(1.04) brightness(1.015);
+  }
+
+  54% {
+    background-position: 48% 50%;
+    filter: saturate(1.05) brightness(1.02);
+  }
+
+  72% {
+    background-position: 66% 50%;
+    filter: saturate(1.04) brightness(1.015);
   }
 
   100% {
-    filter: hue-rotate(360deg) saturate(1.02) brightness(1);
+    background-position: 84% 50%;
+    filter: saturate(1.02) brightness(1.005);
   }
 }
 
@@ -303,5 +332,6 @@ pre {
     animation: none;
   }
 }
+
 
 
