@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" role="img" aria-label="Method placeholder">
+  <rect width="1280" height="560" rx="12" fill="#ffffff"/>
+  <g font-family="Arial, sans-serif" font-weight="700" text-anchor="middle">
+    <rect x="56" y="176" width="210" height="110" rx="10" fill="#eef0ff" stroke="#5b6ee1"/>
+    <text x="161" y="240" fill="#344054" font-size="24">Video + Question</text>
+    <rect x="350" y="176" width="210" height="110" rx="10" fill="#f7f8fb" stroke="#98a2b3"/>
+    <text x="455" y="240" fill="#344054" font-size="24">Student Rollout</text>
+    <rect x="644" y="80" width="210" height="110" rx="10" fill="#d9f3ef" stroke="#22a699"/>
+    <text x="749" y="145" fill="#344054" font-size="24">Judge Feedback</text>
+    <rect x="644" y="278" width="210" height="110" rx="10" fill="#f8e7ef" stroke="#ef6f6c"/>
+    <text x="749" y="343" fill="#344054" font-size="24">Teacher Replay</text>
+    <rect x="938" y="176" width="286" height="110" rx="10" fill="#fff7e6" stroke="#f5a524"/>
+    <text x="1081" y="224" fill="#344054" font-size="24">Token-Level</text>
+    <text x="1081" y="256" fill="#344054" font-size="24">Magnitude Update</text>
+  </g>
+  <g stroke="#5b6ee1" stroke-width="8" stroke-linecap="round">
+    <path d="M276 231h60"/>
+    <path d="M570 231h48"/>
+    <path d="M854 135c70 0 70 96 70 96"/>
+    <path d="M854 333c70 0 70-102 70-102"/>
+  </g>
+  <text x="640" y="488" text-anchor="middle" fill="#667085" font-family="Arial, sans-serif" font-size="30" font-weight="700">Replace this with the VISD method diagram</text>
+</svg>

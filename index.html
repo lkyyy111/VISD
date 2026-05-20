@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VISD: Enhancing Video Reasoning via Structured Self-Distillation</title>
+    <meta
+      name="description"
+      content="Project page skeleton for VISD: Enhancing Video Reasoning via Structured Self-Distillation."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="VISD home">
+        <!-- Replace this with your icon file, for example assets/logos/visd-logo.png -->
+        <img class="brand-logo" src="assets/logos/logo-placeholder.svg" alt="" />
+        <span>VISD</span>
+      </a>
+      <nav class="site-nav" aria-label="Page sections">
+        <a href="#abstract">Abstract</a>
+        <a href="#motivation">Motivation</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="venue">Conference / Workshop Name, 2026</p>
+          <h1>VISD: Enhancing Video Reasoning via Structured Self-Distillation</h1>
+          <p class="subtitle">
+            A structured self-distillation framework for fine-grained credit assignment in video reasoning.
+          </p>
+
+          <p class="authors">
+            Author One*, Author Two*, Author Three, Author Four, Corresponding Author
+          </p>
+          <p class="affiliations">
+            Institution One · Institution Two · Institution Three
+          </p>
+
+          <div class="link-row" aria-label="Project links">
+            <a class="button" href="assets/paper/VISD.pdf">Paper</a>
+            <a class="button" href="#">Code</a>
+            <a class="button" href="#">Dataset</a>
+            <a class="button" href="#">arXiv</a>
+          </div>
+        </div>
+
+        <figure class="hero-media">
+          <!-- Replace with a strong teaser image or video frame. -->
+          <img src="assets/figures/teaser-placeholder.svg" alt="VISD teaser placeholder" />
+          <figcaption>
+            Teaser figure: place a compact overview of the problem, VISD's feedback signal, or a key qualitative case here.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section">
+        <div class="tldr-box">
+          <h2><span aria-hidden="true">📌</span> TL;DR</h2>
+          <p>
+            <strong>VISD</strong> improves video reasoning by using structured self-distillation:
+            a video-aware judge produces diagnostic feedback, and a teacher policy turns that
+            feedback into dense token-level learning signals while reinforcement rewards preserve
+            the update direction.
+          </p>
+        </div>
+      </section>
+
+      <section id="abstract" class="section text-section">
+        <h2>Abstract</h2>
+        <p>
+          Replace this paragraph with the paper abstract. Keep it to one or two readable paragraphs
+          so visitors can understand the problem, method, and main result without scrolling through
+          dense paper text.
+        </p>
+      </section>
+
+      <section id="motivation" class="section split-section">
+        <div>
+          <h2>Motivation</h2>
+          <p>
+            Explain why sparse sequence-level rewards are insufficient for video reasoning. This is
+            a good place to discuss temporal misalignment, spatial grounding failures, and the need
+            for diagnostic supervision.
+          </p>
+          <ul class="clean-list">
+            <li><strong>Problem:</strong> long video reasoning needs fine-grained credit assignment.</li>
+            <li><strong>Gap:</strong> RLVR rewards are reliable but sparse.</li>
+            <li><strong>Idea:</strong> structured feedback can indicate where and why reasoning fails.</li>
+          </ul>
+        </div>
+        <figure class="media-card">
+          <!-- Replace with motivation.pdf export, case comparison, or failure example. -->
+          <img src="assets/figures/motivation-placeholder.svg" alt="Motivation figure placeholder" />
+          <figcaption>Motivation figure or qualitative failure example.</figcaption>
+        </figure>
+      </section>
+
+      <section id="method" class="section">
+        <div class="section-heading">
+          <h2>Method</h2>
+          <p>
+            Use this section for the VISD pipeline: judge model, privileged feedback, teacher replay,
+            and direction-magnitude decoupling.
+          </p>
+        </div>
+
+        <figure class="wide-figure">
+          <!-- Replace with Figure 2 or your cleaned method diagram. -->
+          <img src="assets/figures/method-placeholder.svg" alt="Method overview placeholder" />
+          <figcaption>
+            Method overview: student rollouts are evaluated by a video-aware judge, then replayed
+            with a feedback-conditioned teacher to modulate token-level update magnitudes.
+          </figcaption>
+        </figure>
+
+        <div class="feature-grid">
+          <article>
+            <h3>Structured Feedback</h3>
+            <p>Describe answer correctness, logical consistency, temporal grounding, and spatial grounding signals.</p>
+          </article>
+          <article>
+            <h3>Teacher Replay</h3>
+            <p>Describe how privileged context conditions the teacher for token-level supervision.</p>
+          </article>
+          <article>
+            <h3>Stable RL Integration</h3>
+            <p>Describe direction-magnitude decoupling, curriculum scheduling, and EMA teacher stabilization.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="results" class="section">
+        <div class="section-heading">
+          <h2>Experimental Results</h2>
+          <p>
+            Put the headline quantitative results here. Keep the first table small and readable; move
+            dense details to an expandable image/table or supplementary link.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <article class="metric-card">
+            <span class="metric-value">+28.4</span>
+            <span class="metric-label">V-STAR answer accuracy over Qwen2.5-VL-7B</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">48.0</span>
+            <span class="metric-label">Average general benchmark score</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-value">~2x</span>
+            <span class="metric-label">Faster convergence in optimization steps</span>
+          </article>
+        </div>
+
+        <figure class="wide-figure">
+          <!-- Replace with a cleaned result table or plot. -->
+          <img src="assets/results/results-placeholder.svg" alt="Main results placeholder" />
+          <figcaption>Main result table or benchmark comparison figure.</figcaption>
+        </figure>
+      </section>
+
+      <section id="analysis" class="section">
+        <div class="section-heading">
+          <h2>Analysis</h2>
+          <p>
+            Use this section for ablations, training curves, and qualitative case studies.
+          </p>
+        </div>
+
+        <div class="analysis-layout">
+          <figure class="media-card">
+            <!-- Replace with ablation curves, e.g. Figure 3. -->
+            <img src="assets/analysis/ablation-placeholder.svg" alt="Ablation placeholder" />
+            <figcaption>Ablation curves or component analysis.</figcaption>
+          </figure>
+          <figure class="media-card">
+            <!-- Replace with a qualitative case study frame grid. -->
+            <img src="assets/analysis/case-study-placeholder.svg" alt="Case study placeholder" />
+            <figcaption>Qualitative grounding example or model comparison.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="citation" class="section text-section">
+        <h2>Citation</h2>
+        <pre class="bibtex"><code>@inproceedings{visd2026,
+  title     = {VISD: Enhancing Video Reasoning via Structured Self-Distillation},
+  author    = {Lin, Hao and Lv, Kunyang and Jiang, Xu and Tian, Jingqi and others},
+  booktitle = {Conference Name},
+  year      = {2026}
+}</code></pre>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>VISD Project Page</span>
+      <a href="#top">Back to top</a>
+    </footer>
+  </body>
+</html>

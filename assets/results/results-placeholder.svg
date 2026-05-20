@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 520" role="img" aria-label="Results placeholder">
+  <rect width="1280" height="520" rx="12" fill="#ffffff"/>
+  <rect x="60" y="68" width="1160" height="72" fill="#eef0ff"/>
+  <g fill="#f7f8fb" stroke="#d9dee8">
+    <rect x="60" y="160" width="1160" height="60"/>
+    <rect x="60" y="240" width="1160" height="60"/>
+    <rect x="60" y="320" width="1160" height="60"/>
+  </g>
+  <g fill="#667085" font-family="Arial, sans-serif" font-size="24">
+    <text x="100" y="114">Model</text>
+    <text x="420" y="114">Benchmark 1</text>
+    <text x="680" y="114">Benchmark 2</text>
+    <text x="940" y="114">Average</text>
+  </g>
+  <text x="640" y="455" text-anchor="middle" fill="#667085" font-family="Arial, sans-serif" font-size="30" font-weight="700">Main result table or plot goes here</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Teaser placeholder">
+  <rect width="960" height="540" rx="12" fill="#ffffff"/>
+  <rect x="40" y="40" width="880" height="320" rx="10" fill="#eef0ff" stroke="#d9dee8"/>
+  <rect x="88" y="92" width="220" height="160" rx="8" fill="#d7dcff"/>
+  <rect x="370" y="92" width="220" height="160" rx="8" fill="#d9f3ef"/>
+  <rect x="652" y="92" width="220" height="160" rx="8" fill="#f8e7ef"/>
+  <path d="M324 172h30M606 172h30" stroke="#5b6ee1" stroke-width="8" stroke-linecap="round"/>
+  <text x="480" y="407" text-anchor="middle" fill="#667085" font-family="Arial, sans-serif" font-size="30" font-weight="700">Teaser figure / video frame goes here</text>
+  <text x="480" y="448" text-anchor="middle" fill="#98a2b3" font-family="Arial, sans-serif" font-size="22">Replace assets/figures/teaser-placeholder.svg</text>
+</svg>

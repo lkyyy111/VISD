@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-label="Case study placeholder">
+  <rect width="760" height="520" rx="12" fill="#ffffff"/>
+  <rect x="64" y="64" width="280" height="190" rx="8" fill="#eef0ff" stroke="#d9dee8"/>
+  <rect x="416" y="64" width="280" height="190" rx="8" fill="#f8e7ef" stroke="#d9dee8"/>
+  <rect x="64" y="286" width="280" height="120" rx="8" fill="#d9f3ef" stroke="#d9dee8"/>
+  <rect x="416" y="286" width="280" height="120" rx="8" fill="#fff7e6" stroke="#d9dee8"/>
+  <text x="380" y="462" text-anchor="middle" fill="#667085" font-family="Arial, sans-serif" font-size="28" font-weight="700">Qualitative case study</text>
+</svg>
