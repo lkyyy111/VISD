@@ -70,39 +70,26 @@ h1 {
 
 .accent {
   display: inline-block;
-  background: linear-gradient(100deg, #ff5a77 0%, #9a63ff 24%, #3f8cff 48%, #b9e93b 72%, #ff8a34 100%);
-  background-size: 240% 240%;
+  background: linear-gradient(90deg, #ff5f6d 0%, #ffc83d 20%, #9be33f 40%, #45c4ff 60%, #8a62ff 80%, #ff6ec7 100%);
+  background-size: 100% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: visd-rainbow-flow 9s ease-in-out infinite;
+  animation: visd-hue-cycle 7s linear infinite;
 }
 
-@keyframes visd-rainbow-flow {
+@keyframes visd-hue-cycle {
   0% {
-    background-position: 0% 50%;
-    filter: saturate(1) brightness(1);
-  }
-
-  25% {
-    background-position: 35% 50%;
-    filter: saturate(1.08) brightness(1.02);
+    filter: hue-rotate(0deg) saturate(1.02) brightness(1);
   }
 
   50% {
-    background-position: 100% 50%;
-    filter: saturate(1.14) brightness(1.04);
-  }
-
-  75% {
-    background-position: 65% 50%;
-    filter: saturate(1.08) brightness(1.02);
+    filter: hue-rotate(120deg) saturate(1.08) brightness(1.03);
   }
 
   100% {
-    background-position: 0% 50%;
-    filter: saturate(1) brightness(1);
+    filter: hue-rotate(360deg) saturate(1.02) brightness(1);
   }
 }
 
@@ -316,4 +303,5 @@ pre {
     animation: none;
   }
 }
+
 
