@@ -1,508 +1,152 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="description" content="">
-  <meta name="keywords" content="OMG-Seg">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Open-o3-Video</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
-  <link rel="stylesheet" href="../static/css/bulma.min.css">
-  <link rel="stylesheet" href="../static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="../static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="../static/css/fontawesome.all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="../static/css/index.css">
-  <!-- <link rel="icon" href="../../images/github_16x16.png"> -->
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="../static/js/fontawesome.all.min.js"></script>
-  <script src="../static/js/bulma-carousel.min.js"></script>
-  <script src="../static/js/bulma-slider.min.js"></script>
-  <script src="../static/js/index.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VISD: Enhancing Video Reasoning via Structured Self-Distillation</title>
+  <meta name="description" content="VISD project page: Enhancing Video Reasoning via Structured Self-Distillation." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <main>
+    <section class="hero">
+      <h1>
+        <img class="title-logo" src="assets/logos/logo-placeholder.svg" alt="" />
+        <span><span class="accent">VISD:</span> Enhancing Video Reasoning via Structured Self-Distillation</span>
+      </h1>
 
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-    <div class="navbar-menu">
-      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <a class="navbar-item" href="https://marinero4972.github.io/">
-          <span class="icon">
-            <i class="fas fa-home"></i>
-          </span>
-        </a>
-      </div>
-
-    </div>
-  </nav>
-
-
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Open-o3 Video: Grounded Video Reasoning with Explicit
-              Spatio-Temporal Evidence [ICML 2026]</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="https://marinero4972.github.io/">Jiahao Meng</a><sup>1,2</sup>,</span>
-              <span class="author-block">
-                <a href="https://lxtgh.github.io/">Xiangtai Li</a><sup>2</sup>,</span>
-              <span class="author-block">
-                <a href="https://haochen-wang409.github.io">Haochen Wang</a><sup>2,3</sup>,</span>
-              <span class="author-block">
-                <a href="https://tangent0308.github.io/">Yue Tan</a><sup>1</sup>,</span>
-              <span class="author-block">
-                <a href="https://zhang-tao-whu.github.io/">Tao Zhang</a><sup>2,4</sup>,</span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=-j1j7TkAAAAJ&hl=zh-CN">Lingdong
-                  Kong</a><sup>2,5</sup>,</span>
-              <br>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=T4gqdPkAAAAJ">Yunhai Tong</a><sup>1</sup>,</span>
-              <span class="author-block">
-                <a href="https://sites.google.com/view/anranwang/home">Anran Wang</a><sup>2</sup>,</span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=9wOJrf8AAAAJ&hl=zh-CN">Zhiyang
-                  Teng</a><sup>2</sup>,</span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=YgL4rywAAAAJ&hl=zh-CN&oi=ao">Yujing
-                  Wang</a><sup>2</sup>,</span>
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?hl=en&user=RDvwXDsAAAAJ">Zhuochen Wang</a><sup>2</sup>,
-              </span>
-            </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>PKU</span> &nbsp;&nbsp;&nbsp;
-              <span class="author-block"><sup>2</sup>ByteDance</span>&nbsp;&nbsp;&nbsp;
-              <span class="author-block"><sup>3</sup>CASIA</span>&nbsp;&nbsp;&nbsp;
-              <span class="author-block"><sup>4</sup>WHU</span>&nbsp;&nbsp;&nbsp;
-              <span class="author-block"><sup>5</sup>NUS</span>&nbsp;&nbsp;&nbsp;
-            </div>
-
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <!-- Paper Link. -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2510.20579" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://huggingface.co/papers/2510.20579"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span>🤗 Paper</span>
-                  </a>
-                </span>
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/marinero4972/Open-o3-Video"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <!-- HuggingFace link -->
-                <span class="link-block">
-                  <a href="https://huggingface.co/marinero4972/Open-o3-Video/tree/main" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span>🤗 Model</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://huggingface.co/datasets/marinero4972/Open-o3-Video/tree/main" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span>🤗 Data</span>
-                  </a>
-                </span>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Introduction Video -->
-  <section class="hero is-small" style="margin-top: -20px; margin-bottom: 10px;">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-three-fifths">
-        <div class="publication-video">
-          <iframe width="200" height="160" src="https://www.youtube.com/embed/gymaTVRy0JY" title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Introduction Video -->
-
-  <div style="height: 60px;"></div>
-
-
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <img src="./src/teaser.png" alt="empty">
-        <p>
-          <b>TL;DR: </b>Open-o3 Video integrates explicit spatio-temporal evidence (key timestamps and bounding boxes)
-          into video reasoning through curated STGR dataset and a two-stage SFT-RL training strategy, achieving
-          state-of-the-art results on V-STAR and delivering verifiable, reliable reasoning for video understanding.
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Abstract. -->
-  <section class="hero is-light">
-    <div class="container is-max-desktop ">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3" style="margin-top: 20px">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Most video reasoning models only generate textual reasoning traces without indicating when and where key
-              evidence appears. Recent models such as OpenAI-o3 have sparked wide interest in evidence-centered
-              reasoning for images, yet extending this ability to videos is more challenging, as it requires joint
-              temporal tracking and spatial localization across dynamic scenes. We introduce Open-o3 Video, a non-agent
-              framework that integrates explicit spatio-temporal evidence into video reasoning, and carefully collect
-              training data and design training strategies to address the aforementioned challenges. The model
-              highlights key timestamps, objects, and bounding boxes alongside its answers, allowing reasoning to be
-              grounded in concrete visual observations. To enable this functionality, we first curate and build two
-              high-quality datasets, STGR-CoT-30k for SFT and STGR-RL-36k for RL, with carefully constructed temporal
-              and spatial annotations, since most existing datasets offer either temporal spans for videos or spatial
-              boxes on images, lacking unified spatio-temporal supervision and reasoning traces. Then, we adopt a
-              cold-start reinforcement learning strategy with multiple specially designed rewards that jointly encourage
-              answer accuracy, temporal alignment, and spatial precision. On V-STAR benchmark, Open-o3 Video achieves
-              state-of-the-art performance, raising mAM by 14.4% and mLGM by 24.2% on the Qwen2.5-VL baseline.
-              Consistent improvements are also observed on a broad range of video understanding benchmarks, including
-              VideoMME, WorldSense, VideoMMMU, and TVGBench. Beyond accuracy, the reasoning traces produced by Open-o3
-              Video also provide valuable signals for test-time scaling, enabling confidence-aware verification and
-              improving answer reliability.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div style="height: 20px;"></div>
-    </div>
-  </section>
-
-
-  <!-- ===================== Demos ===================== -->
-  <section class="section" id="demos">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Demos</h2>
-      <p class="has-text-justified mb-5" style="max-width:720px; margin:auto; line-height:1.6;">
-        Each pair shows the <strong>input video</strong> (left) and the corresponding <strong>spatio-temporal grounded
-          reasoning visualization</strong> (right). Our model not only provides textual reasoning but also highlights
-        <strong>when</strong> (temporal evidence, i.e. timestamps) and <strong>where</strong> (spatial evidence, i.e.
-        bounding boxes) the key events occur in the video, offering <strong>explicit, interpretable visual
-          traces</strong> that ground the reasoning process. These examples illustrate how <strong>Open-o3
-          Video</strong> connects abstract reasoning with concrete, observable evidence.
+      <p class="authors">
+        <a href="#">Hao Lin</a><sup>*</sup>,
+        <a href="#">Kunyang Lv</a><sup>*</sup>,
+        <a href="#">Xu Jiang</a>,
+        <a href="#">Jingqi Tian</a>,
+        <a href="#">Zhongjing Du</a>,
+        <a href="#">Jiayu Ding</a>,
+        <a href="#">Qiaoman Zhang</a>,
+        <a href="#">Hongbo Jin</a><sup>&dagger;</sup>
       </p>
 
-      <style>
-        .demo-box {
-          padding: 1.25rem;
-          border-radius: 14px;
-          box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
-          background: #fff;
-        }
+      <p class="affiliations">
+        HUST &middot; Wuhan University &middot; Peking University &middot; Tsinghua University
+      </p>
 
-        .demo-media {
-          aspect-ratio: 16 / 9;
-          width: 100%;
-          background: #0a0a0a10;
-          border-radius: 12px;
-          overflow: hidden;
-        }
-
-        .demo-media video,
-        .demo-media img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-          display: block;
-        }
-
-        .demo-caption {
-          font-size: .95rem;
-          color: #666;
-          margin-top: .5rem;
-        }
-
-        @media (prefers-color-scheme: dark) {
-          .demo-box {
-            background: #111;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
-          }
-
-          .demo-caption {
-            color: #aaa;
-          }
-        }
-      </style>
-
-      <!-- ====== Demo 7 ====== -->
-      <div class="demo-box mb-6">
-        <div class="columns is-vcentered">
-          <div class="column is-6">
-            <div class="demo-media">
-              <video src="./src/s08e18_seg02_clip_03.mp4" muted autoplay loop playsinline controls></video>
-            </div>
-            <div class="demo-caption has-text-centered">Input video</div>
-          </div>
-          <div class="column is-6">
-            <div class="demo-media">
-              <img src="./src/demo_vstar_s08e18_seg02_clip_03.gif" alt="Demo 7 visualization">
-            </div>
-            <div class="demo-caption has-text-centered">Spatio-temporal Grounded Reasoning (GIF)</div>
-          </div>
-        </div>
+      <div class="button-row">
+        <a class="pill-button" href="assets/paper/VISD.pdf"><span>PDF</span> Paper</a>
+        <a class="pill-button" href="#"><span>Git</span> Code</a>
+        <a class="pill-button" href="#"><span>Box</span> Model</a>
       </div>
+    </section>
 
-      <!-- ====== Demo 4 ====== -->
-      <div class="demo-box mb-6">
-        <div class="columns is-vcentered">
-          <div class="column is-6">
-            <div class="demo-media">
-              <video src="./src/5587257558.mp4" muted autoplay loop playsinline controls></video>
-            </div>
-            <div class="demo-caption has-text-centered">Input video</div>
-          </div>
-          <div class="column is-6">
-            <div class="demo-media">
-              <img src="./src/demo_vstar_5587257558.gif" alt="Demo 4 visualization">
-            </div>
-            <div class="demo-caption has-text-centered">Spatio-temporal Grounded Reasoning (GIF)</div>
-          </div>
-        </div>
+    <section class="teaser-section">
+      <figure class="teaser">
+        <img src="assets/figures/teaser-placeholder.svg" alt="VISD teaser placeholder" />
+        <figcaption>
+          Replace this with the main teaser, pipeline animation, or qualitative comparison.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="narrow">
+      <div class="tldr">
+        <h2><span aria-hidden="true">&#128204;</span> TL;DR</h2>
+        <p>
+          <strong>VISD</strong> is a structured self-distillation framework that improves video reasoning
+          by turning diagnostic judge feedback into dense token-level supervision, while reinforcement
+          rewards keep policy updates aligned with task objectives.
+        </p>
       </div>
+    </section>
 
-      <!-- ====== Demo 5 ====== -->
-      <div class="demo-box mb-6">
-        <div class="columns is-vcentered">
-          <div class="column is-6">
-            <div class="demo-media">
-              <video src="./src/5804131706.mp4" muted autoplay loop playsinline controls></video>
-            </div>
-            <div class="demo-caption has-text-centered">Input video</div>
-          </div>
-          <div class="column is-6">
-            <div class="demo-media">
-              <img src="./src/demo_vstar_5804131706.gif" alt="Demo 5 visualization">
-            </div>
-            <div class="demo-caption has-text-centered">Spatio-temporal Grounded Reasoning (GIF)</div>
-          </div>
-        </div>
+    <section id="abstract" class="band">
+      <div class="narrow">
+        <h2>Abstract</h2>
+        <p>
+          Training VideoLLMs for complex reasoning remains challenging due to sparse sequence-level
+          rewards and the lack of fine-grained credit assignment over long, temporally grounded
+          reasoning trajectories. VISD introduces structured privileged information for video reasoning:
+          a video-aware judge decomposes reasoning quality into answer correctness, logical consistency,
+          and spatio-temporal grounding, then uses this feedback to guide teacher-based token-level
+          supervision.
+        </p>
+        <p>
+          Replace or shorten this paragraph with the final abstract. The section is intentionally
+          narrow and centered to match a clean academic project page.
+        </p>
       </div>
+    </section>
 
-      <!-- ====== Demo 3 ====== -->
-      <div class="demo-box mb-6">
-        <div class="columns is-vcentered">
-          <div class="column is-6">
-            <div class="demo-media">
-              <video src="./src/3846475848.mp4" muted autoplay loop playsinline controls></video>
-            </div>
-            <div class="demo-caption has-text-centered">Input video</div>
-          </div>
-          <div class="column is-6">
-            <div class="demo-media">
-              <img src="./src/demo_vstar_3846475848.gif" alt="Demo 3 visualization">
-            </div>
-            <div class="demo-caption has-text-centered">Spatio-temporal Grounded Reasoning (GIF)</div>
-          </div>
-        </div>
+    <section id="motivation" class="narrow content-section">
+      <h2>Motivation</h2>
+      <p>
+        Video reasoning needs models to identify not only whether an answer is correct, but also
+        where and why the reasoning succeeds or fails. Sparse RLVR rewards provide reliable final
+        supervision, but they do not diagnose temporal misalignment, spatial grounding mistakes,
+        or inconsistent intermediate reasoning.
+      </p>
+      <figure class="figure-slot">
+        <img src="assets/figures/motivation-placeholder.svg" alt="Motivation figure placeholder" />
+        <figcaption>Put the motivation figure or failure-case visualization here.</figcaption>
+      </figure>
+    </section>
+
+    <section id="method" class="narrow content-section">
+      <h2>Method Overview</h2>
+      <p>
+        VISD augments on-policy video reasoning training with structured privileged feedback.
+        A judge model evaluates each rollout, a feedback-conditioned teacher replays the same
+        completion, and direction-magnitude decoupling combines sparse reward direction with
+        dense token-level update magnitudes.
+      </p>
+      <figure class="figure-slot">
+        <img src="assets/figures/method-placeholder.svg" alt="Method overview placeholder" />
+        <figcaption>Replace this with the VISD method overview figure.</figcaption>
+      </figure>
+    </section>
+
+    <section id="results" class="band">
+      <div class="narrow">
+        <h2>Results</h2>
+        <p>
+          Summarize the main benchmark findings here before the figure. Keep it compact:
+          one paragraph and one or two tables usually work best.
+        </p>
+        <figure class="figure-slot">
+          <img src="assets/results/results-placeholder.svg" alt="Main results placeholder" />
+          <figcaption>Put the main V-STAR / general benchmark result table here.</figcaption>
+        </figure>
       </div>
+    </section>
 
-      <!-- ====== Demo 6 ====== -->
-      <div class="demo-box mb-6">
-        <div class="columns is-vcentered">
-          <div class="column is-6">
-            <div class="demo-media">
-              <video src="./src/8183771503.mp4" muted autoplay loop playsinline controls></video>
-            </div>
-            <div class="demo-caption has-text-centered">Input video</div>
-          </div>
-          <div class="column is-6">
-            <div class="demo-media">
-              <img src="./src/demo_vstar_8183771503.gif" alt="Demo 6 visualization">
-            </div>
-            <div class="demo-caption has-text-centered">Spatio-temporal Grounded Reasoning (GIF)</div>
-          </div>
-        </div>
-      </div>
+    <section id="analysis" class="narrow content-section">
+      <h2>Analysis</h2>
+      <p>
+        Use this section for ablations, training curves, and qualitative examples. In the final
+        page, this can mirror the reference by stacking figures vertically with short captions.
+      </p>
+      <figure class="figure-slot">
+        <img src="assets/analysis/ablation-placeholder.svg" alt="Ablation placeholder" />
+        <figcaption>Ablation or training curve placeholder.</figcaption>
+      </figure>
+      <figure class="figure-slot">
+        <img src="assets/analysis/case-study-placeholder.svg" alt="Case study placeholder" />
+        <figcaption>Qualitative case study placeholder.</figcaption>
+      </figure>
+    </section>
 
-      <!-- ====== Demo 2 ====== -->
-      <div class="demo-box mb-6">
-        <div class="columns is-vcentered">
-          <div class="column is-6">
-            <div class="demo-media">
-              <video src="./src/tNQo2GTbP6s.mp4" muted autoplay loop playsinline controls></video>
-            </div>
-            <div class="demo-caption has-text-centered">Input video</div>
-          </div>
-          <div class="column is-6">
-            <div class="demo-media">
-              <img src="./src/demo_mme_tNQo2GTbP6s.gif" alt="Demo 2 visualization">
-            </div>
-            <div class="demo-caption has-text-centered">Spatio-temporal Grounded Reasoning (GIF)</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- =================== /Demos =================== -->
-
-
-  <!-- Method. -->
-  <section class="section" style="margin-top:-50px; margin-bottom:-50px;">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <div class="columns is-centered has-text-centered">
-          <div class="column">
-            <h2 class="title is-3 is-centered">Model Training</h2>
-            <div class="publication-img">
-              <img id="architecture" src="./src/model.png" style="width:1000px; margin-top:10px;margin-bottom:10px;" />
-            </div>
-          </div>
-        </div>
-        <p><strong>Stage 1:</strong> Cold-start initialization on STGR-CoT-30k equips the model with basic grounded
-          reasoning.</p>
-        <p><strong>Stage 2:</strong> Reinforcement learning with Group Sequence Policy Optimization stabilizes
-          long-horizon optimization. We propose <strong>adaptive temporal proximity</strong> and <strong>temporal
-            gating</strong> in the thinking reward design.</p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- TTS -->
-  <section class="setting teaser">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Inference Time Scaling</h2>
-          <div class="content has-text-justified">
-            <div class="hero-body">
-              <img src="./src/tts.png" alt="empty">
-              <p>
-                <strong>Figure:</strong> The explicit evidence traces can support evidence-aware test-time scaling. At
-                inference, we generate N responses. Each response contains spatio-temporal traces. We crop those regions
-                and recheck their relevance to the question. And the final prediction uses confidence-weighted voting
-                according to the feedback score. This confidence-aware scaling reduces hallucination and improves
-                robustness compared to simple majority voting.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Experiments Results -->
-  <section class="setting teaser">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Experimental Results</h2>
-          <div class="content has-text-justified">
-            <div class="hero-body">
-              <img src="./src/vstar.png" alt="empty">
-              <p>
-                <strong>Figure:</strong> Performance on the V-STAR benchmark, which evaluates spatio-temporal reasoning
-                across three dimensions. Chain1 denotes what-when-where, while Chain2 corresponds to what-where-when.
-                mAM is the average of arithmetic mean, and mLGM is the average of modified logarithmic geometric mean,
-                combining temporal and spatial alignment. Open-o3 Video sets a new state-of-the-art with mAM improved by
-                +14.4% and mLGM by +24.2%, surpassing GPT-4o and Gemini-2-Flash. These results demonstrate that our
-                approach brings significant advances in temporal and spatial grounding.
-              </p>
-            </div>
-            <div class="hero-body">
-              <img src="./src/results_2.png" alt="empty">
-              <p>
-                <strong>Figure:</strong> Performance across different video understanding and temporal grounding
-                benchmarks. Open-o3 Video achieves comparable or even superior results to other video reasoning models,
-                while providing more intuitive spatio-temporal evidence.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BibTeX -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@article{meng2025openo3,
-  title={Open-o3 Video: Grounded Video Reasoning with Explicit Spatio-Temporal Evidence}, 
-  author={Meng, Jiahao and Li, Xiangtai and Wang, Haochen and Tan, Yue and Zhang, Tao and Kong, Lingdong and Tong, Yunhai and Wang, Anran and Teng, Zhiyang and Wang, Yujing and Wang, Zhuochen},
-  journal={arXiv preprint arXiv:2510.20579},
-  year={2025}
+    <section id="citation" class="band">
+      <div class="narrow">
+        <h2>Citation</h2>
+        <pre><code>@inproceedings{visd2026,
+  title     = {VISD: Enhancing Video Reasoning via Structured Self-Distillation},
+  author    = {Lin, Hao and Lv, Kunyang and Jiang, Xu and Tian, Jingqi and Du, Zhongjing and Ding, Jiayu and Zhang, Qiaoman and Jin, Hongbo},
+  booktitle = {Conference Name},
+  year      = {2026}
 }</code></pre>
-    </div>
-  </section>
-  <!-- /BibTeX -->
-
-  <footer class="footer">
-    <div class="container">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              This website is licensed under a <a rel="license"
-                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-                Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-            <p>
-              Thanks for the project template by <a href="https://github.com/nerfies/nerfies.github.io"> Nerfies
-                Project</a>.
-            </p>
-          </div>
-        </div>
       </div>
-    </div>
-  </footer>
-
+    </section>
+  </main>
 </body>
 
 </html>
