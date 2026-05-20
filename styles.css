@@ -102,8 +102,14 @@ h1 {
 }
 
 .pill-button span {
-  font-size: 11px;
-  opacity: 0.85;
+  color: #fff;
+}
+
+.button-icon {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 auto;
+  color: #fff;
 }
 
 .pill-button:hover {
@@ -238,3 +244,4 @@ pre {
     font-size: 26px;
   }
 }
+
