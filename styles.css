@@ -213,6 +213,19 @@ p {
   margin: 0 auto;
 }
 
+
+.content-section ul {
+  margin: 0 0 16px 22px;
+  padding: 0;
+}
+
+.content-section li {
+  margin: 0 0 8px;
+  font-size: 17px;
+  line-height: 1.55;
+  text-align: justify;
+  text-justify: inter-word;
+}
 pre {
   overflow-x: auto;
   margin: 0;
@@ -263,5 +276,6 @@ pre {
     font-size: 26px;
   }
 }
+
 
 

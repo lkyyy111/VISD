@@ -88,36 +88,30 @@
       <div class="narrow">
         <h2>Abstract</h2>
         <p>
-          Training VideoLLMs for complex reasoning remains challenging due to sparse sequence-level rewards and the lack
-          of fine-grained credit assignment over long, temporally grounded reasoning trajectories. While reinforcement
-          learning with verifiable rewards (RLVR) provides reliable supervision, it fails to capture token-level
-          contributions,
-          leading to inefficient learning. Conversely, existing self-distillation methods offer dense supervision but
-          lack
-          structure and diagnostic specificity, and often interact unstably with reinforcement learning. In this work,
-          we propose
-          <strong>VISD</strong>, a structured self-distillation framework that introduces diagnostically meaningful
-          privileged
-          information for
-          video reasoning. VISD employs a video-aware judge model to decompose reasoning quality into multiple
-          dimensions,
-          including answer correctness, logical consistency, and spatio-temporal grounding, and uses this structured
-          feedback to
-          guide a teacher policy for token-level supervision. To stably integrate dense supervision with RL, we
-          introduce a
-          direction–magnitude decoupling mechanism, where rollout-level advantages computed from rewards determine
-          update direction, while structured privileged signals modulate token-level update magnitudes. This design
-          enables
-          semantically aligned and fine-grained credit assignment, improving both reasoning faithfulness and training
-          efficiency.
-          Additionally, VISD incorporates curriculum scheduling and EMA-based teacher stabilization to support robust
-          optimization
-          over long video sequences. Experiments on diverse benchmarks show that VISD consistently outperforms strong
-          baselines,
-          improving answer accuracy and spatio-temporal grounding quality. Notably, VISD reaches these gains with nearly
-          <strong>2</strong>× faster
-          convergence in optimization steps, highlighting the effectiveness of structured self supervision in improving
-          both performance and sample efficiency for VideoLLMs.
+          Training VideoLLMs for complex reasoning remains challenging due to sparse
+          sequence-level rewards and the lack of fine-grained credit assignment over long,
+          temporally grounded reasoning trajectories. While reinforcement learning with ver
+          ifiable rewards (RLVR) provides reliable supervision, it fails to capture token-level
+          contributions, leading to inefficient learning. Conversely, existing self-distillation
+          methods offer dense supervision but lack structure and diagnostic specificity, and
+          often interact unstably with reinforcement learning. In this work, we propose
+          <strong>VISD</strong>, a structured self-distillation framework that introduces diagnostically mean
+          ingful privileged information for video reasoning. VISD employs a video-aware
+          judge model to decompose reasoning quality into multiple dimensions, includ
+          ing answer correctness, logical consistency, and spatio-temporal grounding, and
+          uses this structured feedback to guide a teacher policy for token-level supervision.
+          To stably integrate dense supervision with RL, we adopt a direction–magnitude
+          decoupling mechanism, where rollout-level advantages computed from rewards de
+          termine update direction, while structured privileged signals modulate token-level
+          update magnitudes. This design enables semantically aligned and fine-grained
+          credit assignment, improving both reasoning faithfulness and training efficiency.
+          Additionally, VISD incorporates curriculum scheduling and EMA-based teacher
+          stabilization to support robust optimization over long video sequences. Experi
+          ments on diverse benchmarks show that VISD consistently outperforms strong
+          baselines, improving answer accuracy and spatio-temporal grounding quality. No
+          tably, VISD reaches these gains with nearly <strong>2</strong>× faster convergence in optimization
+          steps, highlighting the effectiveness of structured self supervision in improving
+          both performance and sample efficiency for VideoLLMs
         </p>
       </div>
     </section>
@@ -125,10 +119,25 @@
     <section id="motivation" class="narrow content-section">
       <h2>Motivation</h2>
       <p>
-        Video reasoning needs models to identify not only whether an answer is correct, but also
-        where and why the reasoning succeeds or fails. Sparse RLVR rewards provide reliable final
-        supervision, but they do not diagnose temporal misalignment, spatial grounding mistakes,
-        or inconsistent intermediate reasoning.
+        To alleviate the sparse-reward limitation of RLVR, self-distillation offers a natural way to provide dense
+        token-level supervision. <strong>However</strong>, existing methods usually treat additional supervision as
+        unstructured or modality-agnostic signals. When directly applied to VideoLLMs, this leads to two key
+        challenges:
+      </p>
+      <ul>
+        <li>
+          the supervision <strong>lacks diagnostic specificity</strong>, making it hard to distinguish logical
+          inconsistency from spatio-temporal grounding failures
+        </li>
+        <li>
+          the auxiliary teacher signal may <strong>interact unstably with reward-driven optimization</strong>.
+        </li>
+      </ul>
+      <p>
+        VISD introduces a video-aware judge that produces structured, diagnostic feedback to guide token-level
+        credit assignment. It further incorporates direction-magnitude decoupling, top-K local support, and EMA
+        stabilization, forming a stable self-distillation framework that better captures spatio-temporal evidence in
+        video reasoning.
       </p>
       <figure class="figure-slot">
         <img src="assets/figures/motivation.png" alt="Motivation figure placeholder" />
