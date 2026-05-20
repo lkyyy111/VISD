@@ -147,10 +147,11 @@ h1 {
 }
 
 figcaption {
-  margin-top: 8px;
-  color: var(--muted);
-  font-size: 12px;
-  text-align: center;
+  margin-top: 14px;
+  color: #2f2f2f;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
 }
 
 .narrow {
@@ -261,3 +262,4 @@ pre {
     font-size: 26px;
   }
 }
+
