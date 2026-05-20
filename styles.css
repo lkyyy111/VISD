@@ -229,13 +229,14 @@ p {
 pre {
   overflow-x: auto;
   margin: 0;
-  padding: 18px;
+  padding: 20px 18px;
   border-radius: 6px;
   background: #fff;
   border: 1px solid #ddd;
   color: #222;
   font-size: 13px;
-  line-height: 1.45;
+  line-height: 1.55;
+  white-space: pre;
 }
 
 @media (max-width: 700px) {
@@ -276,6 +277,7 @@ pre {
     font-size: 26px;
   }
 }
+
 
 
 
