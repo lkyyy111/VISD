@@ -166,6 +166,9 @@
       <figure class="figure-slot">
         <img src="assets/figures/method.png" alt="Method overview placeholder" />
       </figure>
+      <figure class="figure-slot">
+        <img src="assets/figures/algo.png" alt="Method overview placeholder" />
+      </figure>
     </section>
 
     <section id="results" class="band">
@@ -195,17 +198,41 @@
 
     <section id="analysis" class="narrow content-section">
       <h2>Analysis</h2>
-      <p>
-        Use this section for ablations, training curves, and qualitative examples. In the final
-        page, this can mirror the reference by stacking figures vertically with short captions.
-      </p>
       <figure class="figure-slot">
-        <img src="assets/analysis/ablation-placeholder.svg" alt="Ablation placeholder" />
-        <figcaption>Ablation or training curve placeholder.</figcaption>
+        <img src="assets/figures/judge.png" alt="Ablation placeholder" />
+        <figcaption><strong>Trajectory-dependent judge feedback.</strong> For the same video question, the judge
+          provides different
+          evaluations and diagnoses
+          for different student rollouts. The feedback is used as privileged information for teacher replay rather than
+          as a
+          replacement for the reinforcement reward.</figcaption>
       </figure>
       <figure class="figure-slot">
-        <img src="assets/analysis/case-study-placeholder.svg" alt="Case study placeholder" />
-        <figcaption>Qualitative case study placeholder.</figcaption>
+        <img src="assets/figures/case1.png" alt="Case study placeholder" />
+        <figcaption><strong>Visualization.</strong> For spatial relation reasoning, VISD accurately localizes the
+          queried child and
+          identifies the object
+          positioned above him, providing precise visual evidence while avoiding confusion with nearby objects. In
+          contrast,
+          related video reasoning models either give incorrect answers or rely on incomplete spatial grounding.
+        </figcaption>
+      </figure>
+      <figure class="figure-slot">
+        <img src="assets/figures/case2.png" alt="Case study placeholder" />
+        <figcaption><strong>Visualization.</strong> For temporal action reasoning, VISD grounds the panda and bucket
+          across relevant frames and correctly infers that the
+          panda is putting itself in the bucket. Competing models miss this action transition and produce incorrect
+          answers.
+        </figcaption>
+      </figure>
+      <figure class="figure-slot">
+        <img src="assets/figures/camp.png" alt="Case study placeholder" />
+        <figcaption>Answer-only vs. feedback-conditioned token credit on the same rollout. Feedback selectively adjusts
+          token-level evidence
+          at reasoning and grounding positions, rather than uniformly shifting all tokens, illustrating how VISD
+          redistributes
+          update magnitudes while preserving the reward-driven update direction.
+        </figcaption>
       </figure>
     </section>
 
