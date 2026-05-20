@@ -70,11 +70,30 @@ h1 {
 
 .accent {
   display: inline-block;
-  background: linear-gradient(90deg, #0057ff 0%, #3f8cff 45%, #8ec5ff 100%);
+  background: linear-gradient(100deg, #125dff 0%, #4ea1ff 28%, #88c9ff 52%, #4b86ff 74%, #245cff 100%);
+  background-size: 220% 220%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  animation: visd-gradient-flow 6.5s ease-in-out infinite;
+}
+
+@keyframes visd-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+    filter: saturate(1) brightness(1);
+  }
+
+  50% {
+    background-position: 100% 50%;
+    filter: saturate(1.12) brightness(1.04);
+  }
+
+  100% {
+    background-position: 0% 50%;
+    filter: saturate(1) brightness(1);
+  }
 }
 
 .authors {
@@ -281,3 +300,9 @@ pre {
 
 
 
+
+@media (prefers-reduced-motion: reduce) {
+  .accent {
+    animation: none;
+  }
+}
