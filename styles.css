@@ -201,7 +201,8 @@ h2 {
 p {
   margin: 0 0 16px;
   font-size: 17px;
-  text-align: left;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .figure-slot {
@@ -262,4 +263,5 @@ pre {
     font-size: 26px;
   }
 }
+
 
