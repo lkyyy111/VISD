@@ -78,7 +78,8 @@
           token-level supervision during training. It leverages a video-aware judge to decompose errors and uses this
           structured feedback to guide a teacher
           policy for
-          fine-grained credit assignment. Combining a stable self-distillation training paradigm tailored for video
+          fine-grained credit assignment. Combining a set of stable self-distillation training paradigms tailored for
+          video
           reasoning, VISD achieves strong performance and high training efficiency.
         </p>
       </div>
@@ -135,7 +136,8 @@
       </ul>
       <p>
         VISD introduces a video-aware judge that produces structured, diagnostic feedback to guide token-level
-        credit assignment. It further incorporates direction-magnitude decoupling, top-K local support, and EMA
+        credit assignment. It further incorporates direction-magnitude decoupling, curriculum scheduling, top-K local
+        support, and EMA
         stabilization, forming a stable self-distillation framework that better captures spatio-temporal evidence in
         video reasoning.
       </p>
@@ -147,10 +149,19 @@
     <section id="method" class="narrow content-section">
       <h2>Method Overview</h2>
       <p>
-        VISD augments on-policy video reasoning training with structured privileged feedback.
-        A judge model evaluates each rollout, a feedback-conditioned teacher replays the same
-        completion, and direction-magnitude decoupling combines sparse reward direction with
-        dense token-level update magnitudes.
+        <strong>To address the lack of diagnostic specificity in token-level supervision</strong>, we introduce a
+        video-aware judge that generates diagnostically grounded feedback based on the student's response and
+        privileged information. This feedback explicitly identifies spatio-temporal and logical errors in the
+        reasoning process, enabling the teacher to provide more accurate token-level supervision and better capture
+        key reasoning cues during self-distillation.
+      </p>
+      <p>
+        <strong>To address the instability between self-distillation and reward-driven optimization</strong>, we adopt a
+        direction-magnitude decoupled optimization strategy. The rollout-level reward determines the update
+        direction, while the discrepancy between teacher and student token distributions controls the update
+        magnitude. To further stabilize training, we compute token-level differences on a top-K local support,
+        apply curriculum scheduling that gradually anneals to standard GRPO, and maintain the teacher using an EMA
+        update. Together, these designs ensure stable and efficient self-distillation for video reasoning.
       </p>
       <figure class="figure-slot">
         <img src="assets/figures/method.png" alt="Method overview placeholder" />
@@ -190,12 +201,13 @@
     <section id="citation" class="band">
       <div class="narrow">
         <h2>Citation</h2>
-        <pre><code>@inproceedings{visd2026,
-  title     = {VISD: Enhancing Video Reasoning via Structured Self-Distillation},
-  author    = {Lin, Hao and Lv, Kunyang and Jiang, Xu and Tian, Jingqi and Du, Zhongjing and Ding, Jiayu and Zhang, Qiaoman and Jin, Hongbo},
-  booktitle = {Conference Name},
-  year      = {2026}
-}</code></pre>
+        <pre><code>@article{lin2026visd,
+        title={VISD: Enhancing Video Reasoning via Structured Self-Distillation},
+        author={Lin, Hao and Lv, Kunyang and Jiang, Xu and Tian, Jingqi and Du, Zhongjing and Ding, Jiayu and Zhang, Qiaoman and
+        Jin, Hongbo},
+        journal={arXiv preprint arXiv:2605.06094},
+        year={2026}
+        }</code></pre>
       </div>
     </section>
   </main>
