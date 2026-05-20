@@ -73,9 +73,16 @@
       <div class="tldr">
         <h2><span aria-hidden="true">&#128204;</span> TL;DR</h2>
         <p>
-          <strong>VISD</strong> is a structured self-distillation framework that improves video reasoning
-          by turning diagnostic judge feedback into dense token-level supervision, while reinforcement
-          rewards keep policy updates aligned with task objectives.
+          <strong>VISD</strong> is a structured self-distillation framework that enhances video reasoning by providing
+          diagnostically grounded
+          token-level supervision during training. It leverages a video-aware judge to decompose errors and uses this
+          structured feedback to guide a teacher
+          policy for
+          fine-grained credit assignment. By combining direction–magnitude decoupled optimization, feedback-conditioned
+          teacher replay, top-K local support for
+          token comparison, and EMA-based teacher stabilization, VISD achieves more efficient and faithful learning,
+          improving spatio-temporal grounding and accelerating convergence
+          without requiring additional inference-time components.
         </p>
       </div>
     </section>
@@ -128,7 +135,11 @@
       </p>
       <figure class="figure-slot">
         <img src="assets/figures/motivation.png" alt="Motivation figure placeholder" />
-        <figcaption>Put the motivation figure or failure-case visualization here.</figcaption>
+        <figcaption>Comparison between RLVR method and VISD. (a) The RLVR method, e.g., GRPO, provides sparse
+          sequence-level signals and
+          fails to capture fine-grained spatial and temporal evidence. (b) VISD uses dense token-level updates, thereby
+          improving
+          convergence speed and overall performance.</figcaption>
       </figure>
     </section>
 
