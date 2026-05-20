@@ -28,6 +28,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.authors a {
+  font-weight: 400;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -47,11 +51,11 @@ h1 {
   justify-content: center;
   gap: 10px;
   max-width: 940px;
-  margin: 0 auto 22px;
+  margin: 0 auto 24px;
   font-family: "Avenir Next", "Nunito Sans", "Segoe UI", sans-serif;
-  font-size: clamp(40px, 3.6vw, 60px);
-  font-weight: 800;
-  line-height: 1.06;
+  font-size: clamp(32px, 2.8vw, 44px);
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: 0;
 }
 
@@ -74,15 +78,17 @@ h1 {
 }
 
 .authors {
-  margin: 0 0 10px;
-  font-size: 20px;
-  font-weight: 600;
+  margin: 0 0 8px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.45;
   text-align: center;
 }
 
 .affiliations {
   margin: 0;
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: 400;
   color: var(--text);
   text-align: center;
 }
@@ -185,8 +191,8 @@ figcaption {
 
 h2 {
   margin: 0 0 20px;
-  font-size: 30px;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 700;
   line-height: 1.2;
   text-align: center;
 }
@@ -224,8 +230,8 @@ pre {
 
   h1 {
     align-items: flex-start;
-    font-size: 30px;
-    line-height: 1.08;
+    font-size: 28px;
+    line-height: 1.12;
   }
 
   .title-logo {
@@ -234,9 +240,12 @@ pre {
     margin-top: 4px;
   }
 
-  .authors,
+  .authors {
+    font-size: 16px;
+  }
+
   .affiliations {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .tldr {
